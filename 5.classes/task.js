@@ -84,11 +84,11 @@ class Library {
 	}
 
 	giveBookByName(bookName) {
-		const findBookname = this.books.find(book => book.name === bookName);
-		if (!findBookname) {
+		const findIndexBookName = this.books.findIndex(book => book.name === bookName);
+		if (findIndexBookName === -1) {
 			return null;
 		}
-		return this.books.pop();
+		return this.books.splice(findIndexBookName, 1)[0];
 	}
 }
 
