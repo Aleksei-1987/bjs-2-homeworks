@@ -11,8 +11,7 @@ function validateCount(amountOfPurchasedUnitsOfGoods) {
     return parseCount(amountOfPurchasedUnitsOfGoods);
   } catch (error) {
     return error;
-  } finally {
-  }
+  } 
 }
 
 class Triangle {
@@ -30,11 +29,12 @@ class Triangle {
   }
 
   get area() {
+    const semiPerimeter = this.perimeter / 2;
     return +Math.sqrt(
-      (this.perimeter / 2) *
-        (this.perimeter / 2 - this.a) *
-        (this.perimeter / 2 - this.b) *
-        (this.perimeter / 2 - this.c)
+      semiPerimeter *
+        (semiPerimeter - this.a) *
+        (semiPerimeter - this.b) *
+        (semiPerimeter - this.c)
     ).toFixed(3);
   }
 }
